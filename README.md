@@ -22,7 +22,7 @@ Bu depo, Linux işletim sistemi üzerinde alt seviye (low-level) sistem programl
 | Lab | Açıklama |
 |---|---|
 | [**`lab01-echo`**](./lab01-echo) | Linux x86 mimarisinde `sys_read` / `sys_write` döngüsü içeren ilk temel shellcode ve C PoC çalışması |
-
+| [**`lab02-shell_open`**](./lab02-shell_open) | Sistem üzerinde interaktif bir kabuk tetiklemeyi hedefleyen shellcode pratiği |
 ---
 
 ## Sorumluluk Reddi Beyanı
