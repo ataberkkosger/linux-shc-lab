@@ -23,6 +23,7 @@ Bu depo, Linux işletim sistemi üzerinde alt seviye (low-level) sistem programl
 |---|---|
 | [**`lab01-echo`**](./lab01-echo) | Linux x86 mimarisinde `sys_read` / `sys_write` döngüsü içeren ilk temel shellcode ve C PoC çalışması |
 | [**`lab02-shell_open`**](./lab02-shell_open) | Linux x86 mimarisinde `sys_execve` ile `/bin/sh` tetikleyen, Null-Free ve bellek hizalamalı shellcode çalışması |
+| [**`lab03-tcp_rev_sh`**](./lab03-tcp_rev_sh) | Linux x86 mimarisinde `socketcall` + `dup2` + `execve` zinciriyle TCP reverse shell oluşturan shellcode çalışması |
 ---
 
 ## Sorumluluk Reddi Beyanı
