@@ -1,0 +1,5 @@
+*.o
+*.out
+lab01-echo/a.out
+lab01-echo/echo
+lab01-echo/echo.o
