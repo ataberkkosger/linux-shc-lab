@@ -1,6 +1,6 @@
-# Linux Shellcode Development Laboratory (linux-shc-lab)
+# Linux Shellcode Development Laboratory
 
-Bu depo, Linux işletim sistemi üzerinde alt seviye (low-level) sistem programlama, sistem çağrıları (syscalls) ve özel shellcode(shc) geliştirme pratiklerini içeren kişisel bir laboratuvardır. Projeye shc öğrenme amacı ile başladım repo sürekli güncellenecektir. Henüz öğrenme aşamasında olduğumdan yanlış yada eksik bilgi var ise lütfen benimle iletişime geçmekten çekinmeyin.
+Bu depo, Linux işletim sistemi üzerinde alt seviye (low-level) sistem programlama, sistem çağrıları (syscalls) ve shellcode geliştirme pratiklerini içeren kişisel bir laboratuvardır. Öğrenme amacıyla başladım; repo sürekli güncellenecektir. Henüz öğrenme aşamasında olduğumdan yanlış veya eksik bilgi varsa lütfen benimle iletişime geçmekten çekinmeyin.
 
 ---
 
@@ -19,7 +19,9 @@ Bu depo, Linux işletim sistemi üzerinde alt seviye (low-level) sistem programl
 
 ## Laboratuvar İndeksi
 
-* [**`lab01-echo`**](./lab01-echo): Linux x86 mimarisinde standart girdi (`sys_read`) ve çıktı (`sys_write`) döngüsü içeren ilk temel shellcode ve C PoC çalışması.
+| Lab | Açıklama |
+|---|---|
+| [**`lab01-echo`**](./lab01-echo) | Linux x86 mimarisinde `sys_read` / `sys_write` döngüsü içeren ilk temel shellcode ve C PoC çalışması |
 
 ---
 
