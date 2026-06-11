@@ -4,6 +4,19 @@ Bu laboratuvar çalışmasında, Linux x86 (32-bit) mimarisi üzerinde standart 
 
 ---
 
+## Shellcode Nedir?
+
+**Shellcode**, binary exploitation veya malware development süreçlerinde kullanılan; doğrudan CPU'nun anlayabileceği makine koduna (opcodes) dönüştürülmüş Assembly kodlarıdır.
+
+Üretim kaliteli bir shellcode genellikle iki temel özelliği karşılamalıdır:
+
+| Özellik | Açıklama |
+|---|---|
+| **PIC** (Position Independent Code) | Kodun bellekte hangi adrese yüklendiğinden bağımsız olarak çalışabilmesi; kendi kendine yetebilmesi |
+| **Null-Free** | Shellcode içinde `0x00` byte bulunmaması — aksi hâlde `strcpy` gibi C string fonksiyonları kopyalamayı erken keser |
+
+---
+
 ## Sistem Çağrıları (Syscalls) ve Akış
 
 | Syscall | Numara | Açıklama |
@@ -11,6 +24,8 @@ Bu laboratuvar çalışmasında, Linux x86 (32-bit) mimarisi üzerinde standart 
 | `sys_read` | `0x03` | Kullanıcıdan girdi almak için tetiklendi |
 | `sys_write` | `0x04` | Girdiyi `stdout` üzerine basmak için tetiklendi |
 | `sys_exit` | `0x01` | Programın `SIGSEGV` almadan temiz kapanması için tetiklendi |
+
+> **Kritik:** Syscall register'ları (`eax`, `ebx`, `ecx`, `edx`) her sistem çağrısından önce **yeniden set edilmelidir** — bir önceki çağrının bıraktığı değerler sonraki çağrıyı bozar. `ESP` ise asla yeniden tanımlanmaz; yalnızca okunur.
 
 ---
 
@@ -36,7 +51,7 @@ nasm -f elf32 echo.asm -o echo.o
 
 ### 2. Shellcode Oluşturma (Opcode Extraction)
 
-Derlenen nesne dosyasındaki ham makine kodlarını ayıklamak ve C uyumlu `\x` formatına getirmek için `objdump` ve pipeline komutları kullanıldı:
+Derlenen nesne dosyasındaki ham makine kodlarını (opcodes) ayıklamak ve C uyumlu `\x` formatına getirmek için `objdump` ve pipeline komutları kullanıldı:
 
 ```bash
 objdump -d echo.o | grep "^ " | cut -f 2 | tr -d ' ' | tr -d '\n' | sed 's/.\{2\}/\\x&/g'
@@ -67,5 +82,7 @@ deneme
 deneme
 ataberk@ataberkpc:~/shellcode0/echo_shellcode$
 ```
-## Sorumluluk Reddi Beyanı 
-Bu proje yalnızca **eğitim ve araştırma** amaçlıdır. Geliştirilen shellcode, düşük seviyeli sistem programlama ve güvenlik araştırmalarına giriş niteliğinde bir laboratuvar çalışmasıdır. İzinsiz sistemler üzerinde kullanılması yasa dışıdır. Yazar, bu kodun kötüye kullanımından doğabilecek herhangi bir zarardan sorumlu tutulamaz.
+
+## Sorumluluk Reddi Beyanı
+
+Bu proje yalnızca **eğitim ve araştırma** amaçlıdır. Geliştirilen shellcode, düşük seviyeli sistem programlama ve güvenlik araştırmalarına giriş niteliğinde bir laboratuvar çalışmasıdır. İzinsiz sistemler üzerinde kullanılması yasadışıdır. Yazar, bu kodun kötüye kullanımından doğabilecek herhangi bir zarardan sorumlu tutulamaz.
