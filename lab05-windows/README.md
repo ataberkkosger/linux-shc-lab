@@ -1,4 +1,4 @@
-# Lab 05: Windows x64 Reverse TCP Shell 
+# Lab 05: Windows x64 Reverse TCP Shell & Custom Encoder/Runner Mimarisi
 
 Bu laboratuvar çalışması, Windows x64 mimarisinde ham shellcode yürütme süreçlerini, kötü amaçlı karakter filtrelemeden (bad character avoidance) kaçınmak için geliştirilen dinamik anahtarlı XOR encoder mekanizmalarını ve süreç enjeksiyonu (`injector`) tekniklerini incelemektedir.
 
@@ -9,7 +9,7 @@ Bu laboratuvar çalışması, Windows x64 mimarisinde ham shellcode yürütme s�
 | Dosya | Açıklama |
 |---|---|
 | **`injector.cpp`** | Bellekte yer ayırma (`VirtualAlloc`), yazma ve thread oluşturma (`CreateThread`) adımlarını yöneten ana enjektör programı. |
-| **`rev_tcp_sh.asm`** | Windows x64 mimarisi için yazılmış, x64 uyumlu ham Reverse TCP Shell payload assembly kodu. |
+| **`rev_tcp_sh.asm`** | Windows x64 mimarisi için yazılmış, x32/x64 uyumlu ham Reverse TCP Shell payload assembly kodu. |
 | **`sgn_encoder_markIII.cpp`** | Üretilen shellcode içindeki `0x00` (null byte) ve yasaklı karakterleri engellemek için dinamik anahtar üreten, null byte içeren anahtarları otomatik olarak elerken ekrana uyarı basıp yeniden deneme mekanizmasına sahip gelişmiş encoder. |
 | **`sgn_runner_markIII.asm`** | Bellekte şifresi çözülen (decoded) payload'ı çalıştırmak için tasarlanmış x32/x64 uyumlu runner mimarisi. |
 
