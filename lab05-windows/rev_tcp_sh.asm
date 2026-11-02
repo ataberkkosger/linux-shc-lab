@@ -110,7 +110,7 @@ start:
     sub     rsp, 0x10
     mov     r11, rsp
     mov     word [rsp], 0x0002
-    mov     word [rsp + 2], 0x00005c116 ;port
+    mov     word [rsp + 2], 0x5c11 ;port
     mov     dword [rsp + 4], 0x0101017f ;ip
     mov     qword [rsp + 8], rax
 
