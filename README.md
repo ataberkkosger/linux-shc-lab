@@ -25,6 +25,8 @@ Bu depo, Linux işletim sistemi üzerinde alt seviye (low-level) sistem programl
 | [**`lab02-shell_open`**](./lab02-shell_open) | Linux x86 mimarisinde `sys_execve` ile `/bin/sh` tetikleyen, Null-Free ve bellek hizalamalı shellcode çalışması |
 | [**`lab03-tcp_rev_sh`**](./lab03-tcp_rev_sh) | Linux x86 mimarisinde `socketcall` + `dup2` + `execve` zinciriyle TCP reverse shell oluşturan shellcode çalışması |
 | [**`lab04-encoder`**](./lab04-encoder) | Kısıtlı karakterlerden (bad characters) kaçınma, Self-Modifying Code (SMC), JMP-CALL-POP tekniği ve XOR tabanlı dekoder mimarisi. |
+| [**`lab05-windows`**](./lab05-windows) | Windows x64 mimarisinde Win32 API çözme, `rev_tcp_sh` (Reverse TCP Shell) ve encoder/runner yapıları üzerine uygulama çalışması. |
+
 ---
 
 ## Sorumluluk Reddi Beyanı
